@@ -1,3 +1,4 @@
+export const API_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6868159&lng=83.2184815&page_type=DESKTOP_WEB_LISTING";
 export const restaurantList = [
     {
       type: "restaurant",
