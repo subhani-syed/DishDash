@@ -21,6 +21,10 @@
     padding: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .card {
     width: 200px;
     padding: 10px;
@@ -60,4 +64,7 @@
     100% {
         background-position: 1000px 0;
     }
+}
+.restaurant-main{
+    display: flex;
 }
