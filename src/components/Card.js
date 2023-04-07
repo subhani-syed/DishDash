@@ -1,14 +1,17 @@
-const Card = ({name,avgRating,cuisines,cloudinaryImageId}) => {
+import { Link } from "react-router-dom";
+import { RESTAURANT_BANNER_URL } from "../config";
+
+const Card = ({name,avgRating,cuisines,cloudinaryImageId,id}) => {
 return (
     <>
     <div className="card">
         <img
         alt="food-item"
-        src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId }
+        src={RESTAURANT_BANNER_URL + cloudinaryImageId }
         ></img>
-        <h2>{name}</h2>
+        <h2><Link to={'/restaurant/'+id}>{name}</Link></h2>
         <h3>{avgRating} Star Rating</h3>
-        <h4>{cuisines.join(", ")}</h4>
+        <h4>Cuisines: {cuisines.join(", ")}</h4>
     </div>
     </>
 );
