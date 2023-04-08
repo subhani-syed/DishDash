@@ -1,23 +1,15 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { RESTAURANT_API_URL, RESTAURANT_BANNER_URL } from "../config";
+import { RESTAURANT_BANNER_URL } from "../config";
 import Shimmer from "./Shimmer";
+import useRestaurant from "../utils/useRestaurant";
 
 const Restaurant = ()=>{
     const {id} = useParams();
-    const [restaurantDetails,setRestaurantDetails] = useState(null);
-    const [items,setItems] = useState([]);
-
-    useEffect(()=>{getRestaurant();},[])
-
-    async function getRestaurant(){
-        const data = await fetch(RESTAURANT_API_URL+id);
-        const json = await data.json();
-        setRestaurantDetails(json);
-        setItems(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-    }
     
+    const [restaurantDetails,items] = useRestaurant(id);
+
     const menu = []
+
     items.forEach((item)=>{
         item?.card?.card?.itemCards?.forEach((it)=>{
             menu.push(it.card.info)
@@ -43,5 +35,5 @@ const Restaurant = ()=>{
             }
         </>
     )
-}
+};
 export default Restaurant;
