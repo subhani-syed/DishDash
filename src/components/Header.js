@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
+
 const Header = () => {
+    const status = useOnline();
 return (
     <div className="header">
     <Link to="/">
@@ -14,7 +17,8 @@ return (
         <li><Link to="/menu">Menu</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/cart">Cart</Link></li>
-        <p>Status : </p>
+        {status? <p>Online</p> : <p>Offline</p>}
+        
     </ul>
     </div>
 );

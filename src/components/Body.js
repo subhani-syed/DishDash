@@ -1,8 +1,9 @@
 import Card from "./Card";
-import { restaurantList,API_URL } from "../config";
+import { API_URL } from "../config";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { search } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [searchText,setsearchText] = useState("");
@@ -22,6 +23,12 @@ const Body = () => {
     }
   }
   
+  const status = useOnline();
+
+  if(!status){
+    return <h1>You are Offline</h1>
+  }
+
   return (
     <>
       <input type="text" placeholder="Search Restaurant" value={searchText} onChange={(e)=>{
