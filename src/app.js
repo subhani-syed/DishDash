@@ -12,33 +12,32 @@ const App = () => {
   return (
     <>
       <Header />
-      <Outlet/>
+      <Outlet />
       <Footer />
     </>
   );
 };
 const appRouter = createBrowserRouter([
   {
-    path:"/",
-    element:<App />,
-    errorElement:<Error />,
-    children:[
+    path: "/",
+    element: <App />,
+    errorElement: <Error />,
+    children: [
       {
-        path:"/",
-        element:<Body/>,
+        path: "/",
+        element: <Body />,
       },
       {
-        path:"/about",
-        element:<About/>,
+        path: "/about",
+        element: <About />,
       },
       {
-        path:"/restaurant/:id",
-        element:<Restaurant/>,
+        path: "/restaurant/:id",
+        element: <Restaurant />,
       },
-
     ],
   },
-])
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);

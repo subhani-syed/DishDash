@@ -21,7 +21,7 @@
     padding: 10px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -32,7 +32,7 @@ a{
     border: 1px solid black;
 }
 
-.card > img {
+.card>img {
     width: 200px;
 }
 
@@ -42,29 +42,32 @@ a{
     flex-wrap: wrap;
 }
 
-.shimmer-card{
-    background-color: rgb(213, 213, 213);
+.shimmer-card {
+    /* background-color: rgb(213, 213, 213); */
     width: 200px;
     height: 200px;
     padding: 10px;
     margin: 10px;
-    animation : shimmer 3s infinite;
+    animation: shimmer 3s infinite;
     background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
 }
 
-.shimmer-main{
+.shimmer-main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 @keyframes shimmer {
     0% {
         background-position: -1000px 0;
     }
+
     100% {
         background-position: 1000px 0;
     }
 }
-.restaurant-main{
+
+.restaurant-main {
     display: flex;
 }
